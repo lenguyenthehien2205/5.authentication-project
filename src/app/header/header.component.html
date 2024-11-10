@@ -1,0 +1,17 @@
+<header class="flex flex-row justify-between items-center gap-4 w-[90%] max-w-[80%] mx-auto mb-8 text-center bg-gradient-to-b from-[#b4b250] to-[#9CDBA6] py-2 px-8 rounded-b-xl shadow-lg">
+    <img src="logo/logo.png" alt="A todo list" class="w-[80px] md:w-[100px] object-contain" />
+    @if(name() !== ''){
+        <div class="flex flex-row align-middle">
+            <p class="leading-[40px] font-bold mx-4">{{ name() }}</p>
+            <button class="w-[100px] h-[40px] hover:bg-slate-400 rounded-xl transition-all" (click)="onLogOut()">
+                Đăng xuất
+            </button>
+        </div>
+    }@else{
+        <a routerLink="login">
+            <button class="w-[100px] h-[40px] hover:bg-slate-400 rounded-xl transition-all">
+                Đăng nhập
+            </button>
+        </a>
+    }
+</header>

@@ -1,0 +1,21 @@
+<div class="flex gap-10 justify-center mt-[150px]">
+    <div>
+        <img src="logo/banner.png" alt="">
+    </div>
+    <div>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="flex flex-col w-[400px] h-[320px] p-4 rounded-lg shadow-xl bg-slate-50">
+            <h1 class="text-center text-[25px]">Đăng nhập</h1>
+            <label for="" class="ml-4">Username</label>
+            <input type="text" formControlName="email">
+            @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+                <p class="text-red-500 ml-4">Tên đăng nhập không được để trống</p>
+            }
+            <label for="" class="ml-4">Password</label>
+            <input type="password" formControlName="password">
+            @if(loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                <p class="text-red-500 ml-4">Mật khẩu không được để trống</p>
+            }
+            <button class="text-[15px] mt-5 bg-orange-500 py-[8px] px-[15px] rounded-full text-[#fff] hover:opacity-80 transition-all">Đăng nhập</button>
+        </form>
+    </div>
+</div>
